@@ -6,6 +6,7 @@ on:
       - main
       - 'release/**'
 
+
 jobs:
   sample-job:
     runs-on: windows-latest
