@@ -1,6 +1,9 @@
 name: Pull Request workflow
 on:
   workflow_dispatch:
+  pull_request:
+    branches: 
+      '!main'
 jobs:
   sample-job:
     runs-on: windows-latest
