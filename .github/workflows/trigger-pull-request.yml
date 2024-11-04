@@ -4,7 +4,6 @@ on:
   pull_request:
     branches: 
       - '*'
-      - '!main'
 jobs:
   sample-job:
     runs-on: windows-latest
