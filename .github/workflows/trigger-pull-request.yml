@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   pull_request:
     branches: 
-      '!main'
+      - '!main'
 jobs:
   sample-job:
     runs-on: windows-latest
