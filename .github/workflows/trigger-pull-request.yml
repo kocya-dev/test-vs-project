@@ -23,7 +23,7 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: テスト結果
-          path: "./SampleUnitTest/TestResults/*.trx"
+          path: .\SampleUnitTest\TestResults\*.trx
           reporter: dotnet-trx
 
   
