@@ -1,0 +1,23 @@
+name: Main merge workflow
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  main-make-artifacts:
+    runs-on: windows-latest
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+      - name: .NET環境セットアップ
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: ビルド(NuGetパッケージ復元あり)
+        run: dotnet build TestVsProject.sln -c Release
+      - name: ビルド結果のアップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: bin_Release
+          path: .\TestVsProject\bin\Release
