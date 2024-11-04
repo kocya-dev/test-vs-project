@@ -5,11 +5,14 @@ jobs:
   sample-job:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - name: チェックアウト
+        uses: actions/checkout@v4
+      - name: .NET環境セットアップ
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - run: dotnet build TestVsProject.sln -c Release
-      - run: dotnet test TestVsProject.sln -c Release --no-restore -l trx -l console
-
-  
+      - name: ビルド(NuGetパッケージ復元あり)
+        run: dotnet build TestVsProject.sln -c Release
+      - name: テスト(コンソール/TRX出力)
+        run: dotnet test TestVsProject.sln -c Release --no-restore -l trx -l console
+      
