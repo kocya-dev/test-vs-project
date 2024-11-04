@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            _addButton = new Button();
+            _subButton = new Button();
+            _textBoxLhs = new TextBox();
+            _textBoxRhs = new TextBox();
+            _textBoxResult = new TextBox();
+            SuspendLayout();
+            // 
+            // _addButton
+            // 
+            _addButton.Location = new Point(12, 41);
+            _addButton.Name = "_addButton";
+            _addButton.Size = new Size(75, 23);
+            _addButton.TabIndex = 3;
+            _addButton.Text = "add";
+            _addButton.UseVisualStyleBackColor = true;
+            _addButton.Click += _addButton_Click;
+            // 
+            // _subButton
+            // 
+            _subButton.Location = new Point(12, 70);
+            _subButton.Name = "_subButton";
+            _subButton.Size = new Size(75, 23);
+            _subButton.TabIndex = 4;
+            _subButton.Text = "sub";
+            _subButton.UseVisualStyleBackColor = true;
+            _subButton.Click += _subButton_Click;
+            // 
+            // _textBoxLhs
+            // 
+            _textBoxLhs.Location = new Point(12, 12);
+            _textBoxLhs.Name = "_textBoxLhs";
+            _textBoxLhs.Size = new Size(101, 23);
+            _textBoxLhs.TabIndex = 0;
+            // 
+            // _textBoxRhs
+            // 
+            _textBoxRhs.Location = new Point(119, 12);
+            _textBoxRhs.Name = "_textBoxRhs";
+            _textBoxRhs.Size = new Size(101, 23);
+            _textBoxRhs.TabIndex = 1;
+            // 
+            // _textBoxResult
+            // 
+            _textBoxResult.Location = new Point(226, 12);
+            _textBoxResult.Name = "_textBoxResult";
+            _textBoxResult.ReadOnly = true;
+            _textBoxResult.Size = new Size(101, 23);
+            _textBoxResult.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(_textBoxResult);
+            Controls.Add(_textBoxRhs);
+            Controls.Add(_textBoxLhs);
+            Controls.Add(_subButton);
+            Controls.Add(_addButton);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button _addButton;
+        private Button _subButton;
+        private TextBox _textBoxLhs;
+        private TextBox _textBoxRhs;
+        private TextBox _textBoxResult;
     }
 }

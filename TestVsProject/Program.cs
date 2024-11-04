@@ -11,6 +11,9 @@ namespace test_vs_project
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            log4net.Config.XmlConfigurator.Configure(new FileInfo("log4net.config"));
+
             Application.Run(new Form1());
         }
     }
