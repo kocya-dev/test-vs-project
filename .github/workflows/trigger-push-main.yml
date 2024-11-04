@@ -2,7 +2,7 @@ name: Main merge workflow
 on:
   workflow_dispatch:
   push:
-    - main
+    branches: main
 jobs:
   main-make-artifacts:
     runs-on: windows-latest
